@@ -21,9 +21,9 @@ FROM ghcr.io/s6n-labs/distroless-php:8.2.6-zts-bullseye
 
 ## Comparison
 
-|Image|php|distroless-php|
+|Image|php|distroless-php|Δ|
 |---|---|---|
-|8.2.6-zts-bullseye|419 MB|108 MB|
-|8.2.6-bullseye|450 MB|139 MB|
-|8.1.19-zts-bullseye|418 MB|108 MB|
-|8.1.19-bullseye|448 MB|138 MB|
+|8.2.6-zts-bullseye|419 MB|108 MB|-311 MB|
+|8.2.6-bullseye|450 MB|139 MB|-311 MB|
+|8.1.19-zts-bullseye|418 MB|108 MB|-310 MB|
+|8.1.19-bullseye|448 MB|138 MB|-310 MB|
