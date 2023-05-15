@@ -1,0 +1,15 @@
+FROM php:{{tag}} AS php
+
+RUN mkdir -p "/tmp/lib/$(uname -m)-linux-gnu" && \
+    ldd /usr/local/bin/php | grep '=> /usr/lib/' | cut -d' ' -f3 | sed 's#/usr/lib/##g' | \
+    xargs -I % sh -c 'mkdir -p "$(basename /tmp/lib/%)" && cp "/usr/lib/%" "/tmp/lib/%"'
+
+FROM gcr.io/distroless/cc
+
+COPY --from=php /bin/sh /bin/
+COPY --from=php /lib/ /lib/
+COPY --from=php /tmp/lib/ /usr/lib/
+COPY --from=php /usr/local/lib/libphp.* /usr/local/lib/
+COPY --from=php /usr/local/bin/docker-php-* /usr/local/bin/php* /usr/local/bin/
+
+ENTRYPOINT ["docker-php-entrypoint"]
