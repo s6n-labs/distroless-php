@@ -21,7 +21,6 @@ jobs:
           - 'zts'
           - 'nts'
         os:
-          - 'buster'
           - 'bullseye'
         include:
           - variant: zts

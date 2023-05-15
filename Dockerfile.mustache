@@ -4,7 +4,7 @@ RUN mkdir -p "/tmp/lib/$(uname -m)-linux-gnu" && \
     ldd /usr/local/bin/php | grep '=> /usr/lib/' | cut -d' ' -f3 | sed 's#/usr/lib/##g' | \
     xargs -I % sh -c 'mkdir -p "$(basename /tmp/lib/%)" && cp "/usr/lib/%" "/tmp/lib/%"'
 
-FROM gcr.io/distroless/cc
+FROM gcr.io/distroless/cc-debian11
 
 COPY --from=php /bin/sh /bin/
 COPY --from=php /lib/ /lib/
