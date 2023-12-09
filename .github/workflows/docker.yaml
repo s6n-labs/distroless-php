@@ -21,14 +21,14 @@ jobs:
           - 'zts'
           - 'nts'
         os:
-          - 'bullseye'
+          - 'bookworm'
         include:
           - variant: zts
             suffix: '-zts'
           - variant: nts
             suffix: ''
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: docker/setup-buildx-action@v2
 
