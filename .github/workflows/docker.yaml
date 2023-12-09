@@ -45,5 +45,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
+          context: .
           build-args: TAG=${{ env.TAG }}
           tags: ghcr.io/s6n-labs/distroless-php:${{ env.TAG }}
