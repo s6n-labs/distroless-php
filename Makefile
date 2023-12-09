@@ -1,7 +1,7 @@
 REPOSITORY := ghcr.io/s6n-labs/distroless-php
 PUSH := false
 BUILDX := false
-PLATFORMS := linux/amd64
+PLATFORMS := linux/amd64,linux/arm64
 DOCKER_ARGS :=
 DOCKER_BUILD := docker build
 
