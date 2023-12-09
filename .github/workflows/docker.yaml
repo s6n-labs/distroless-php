@@ -15,8 +15,9 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - '8.1.19'
-          - '8.2.6'
+          - '8.1.26'
+          - '8.2.13'
+          - '8.3.0'
         variant:
           - 'zts'
           - 'nts'
